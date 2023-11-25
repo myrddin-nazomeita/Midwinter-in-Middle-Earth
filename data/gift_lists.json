@@ -1,0 +1,74 @@
+{
+    "user1": [
+        {
+            "title": "Book",
+            "link": "http://example.com",
+            "purchased": false,
+            "added_by": "user2"
+        },
+        {
+            "title": "user1",
+            "link": "WDWDWD",
+            "purchased": false,
+            "added_by": "user1"
+        },
+        {
+            "title": "what user3 added to user1",
+            "link": "dwdwdw",
+            "purchased": true,
+            "added_by": "user3"
+        },
+        {
+            "title": "user1",
+            "link": "wdwddw",
+            "purchased": false,
+            "added_by": "user2"
+        },
+        {
+            "title": " dsadsa",
+            "link": "asd",
+            "purchased": false,
+            "added_by": "user1"
+        }
+    ],
+    "user2": [
+        {
+            "title": "Headphones",
+            "link": "http://example.com",
+            "purchased": true,
+            "added_by": "user3"
+        },
+        {
+            "title": "WDWD",
+            "link": "WDWD",
+            "purchased": true,
+            "added_by": "user1"
+        },
+        {
+            "title": "wdwd",
+            "link": "wdwd",
+            "purchased": true,
+            "added_by": "user1"
+        },
+        {
+            "title": "wdwddw",
+            "link": "dwdw",
+            "purchased": false,
+            "added_by": "user2"
+        },
+        {
+            "title": "sad",
+            "link": "asdsd",
+            "purchased": false,
+            "added_by": "user2"
+        }
+    ],
+    "user3": [
+        {
+            "title": "asd",
+            "link": "asd",
+            "purchased": true,
+            "added_by": "user1"
+        }
+    ]
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gift Lists</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='festive_styles.css') }}">
+</head>
+<body>
+<body>
+    <h1>Welcome, {{ username }}</h1>
+    <a href="/logout">Logout</a>
+
+    <h2>Add a Gift to Someone's List</h2>
+    <!-- Form for Adding New Gift to Any List -->
+    <form action="/add" method="post">
+        Title: <input type="text" name="title" required><br>
+        Link: <input type="text" name="link" required><br>
+        Add to List of: 
+        <select name="list_owner">
+            {% for user in gift_lists.keys() %}
+                <option value="{{ user }}">{{ user }}</option>
+            {% endfor %}
+        </select><br>
+        <input type="submit" value="Add Gift">
+    </form>
+
+    <h2>What I added to my Gift List</h2>
+    <!-- Displaying the User's Current Gift List -->
+    <ul>
+        {% for gift in gift_lists[username] %}
+            {% if gift.added_by == username %}
+                <li>{{ gift.title }} - <a href="{{ gift.link }}">Link</a></li>
+            {% endif %}
+        {% endfor %}
+    </ul>    
+
+    <h2>Others' Gift Lists</h2>
+    {% for user, gifts in gift_lists.items() %}
+        {% if user != username %}
+            <h3>{{ user }}'s List</h3>
+            <ul>
+                {% for gift in gifts %}
+                    <li>{{ gift.title }} - <a href="{{ gift.link }}">Link</a>
+                        {% if not gift.purchased %}
+                            - <a href="/purchase/{{ user }}/{{ loop.index0 }}">Mark as Purchased</a>
+                        {% else %}
+                            - Purchased
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endfor %}
+</body>
+</html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Gift Lists</title>
+    <title>Midwinter in Middle-Earth</title>
     <link
       rel="stylesheet"
       type="text/css"
@@ -10,48 +10,66 @@
   </head>
   <body>
     <header>
-      <h2>Welcome to the Festive Gift Exchange!</h2>
+      <h1>Welcome, {{ username }}</h1>
     </header>
 
-    <h1>Welcome, {{ username }}</h1>
-    <a href="/logout">Logout</a>
+    <nav>
+      <a href="/logout">Logout</a>
+    </nav>
 
-    <h2>Add a Gift to Someone's List</h2>
-    <!-- Form for Adding New Gift to Any List -->
-    <form action="/add" method="post">
-      Title: <input type="text" name="title" required /><br />
-      Link: <input type="text" name="link" required /><br />
-      Add to List of:
-      <select name="list_owner">
-        {% for user in gift_lists.keys() %}
-        <option value="{{ user }}">{{ user }}</option>
-        {% endfor %}</select
-      ><br />
-      <input type="submit" value="Add Gift" />
-    </form>
+    <main>
+      <section>
+        <h2>Add a Gift to Someone's List</h2>
+        <!-- Form for Adding New Gift to Any List -->
+        <form action="/add" method="post">
+          <label for="title">Title:</label>
+          <input type="text" id="title" name="title" required /><br />
 
-    <h2>What I added to my Gift List</h2>
-    <!-- Displaying the User's Current Gift List -->
-    <ul>
-      {% for gift in gift_lists[username] %} {% if gift.added_by == username %}
-      <li>{{ gift.title }} - <a href="{{ gift.link }}">Link</a></li>
-      {% endif %} {% endfor %}
-    </ul>
+          <label for="link">Link:</label>
+          <input type="text" id="link" name="link" required /><br />
 
-    <h2>Others' Gift Lists</h2>
-    {% for user, gifts in gift_lists.items() %} {% if user != username %}
-    <h3>{{ user }}'s List</h3>
-    <ul>
-      {% for gift in gifts %}
-      <li>
-        {{ gift.title }} - <a href="{{ gift.link }}">Link</a> {% if not
-        gift.purchased %} -
-        <a href="/purchase/{{ user }}/{{ loop.index0 }}">Mark as Purchased</a>
-        {% else %} - Purchased {% endif %}
-      </li>
-      {% endfor %}
-    </ul>
-    {% endif %} {% endfor %}
+          <label for="list_owner">Add to List of:</label>
+          <select id="list_owner" name="list_owner">
+            {% for user in gift_lists.keys() %}
+            <option value="{{ user }}">{{ user }}</option>
+            {% endfor %}</select
+          ><br />
+
+          <input type="submit" value="Add Gift" />
+        </form>
+      </section>
+
+      <section>
+        <h2>What I added to my Gift List</h2>
+        <!-- Displaying the User's Current Gift List -->
+        <ul>
+          {% for gift in gift_lists[username] %} {% if gift.added_by == username
+          %}
+          <li>{{ gift.title }} - <a href="{{ gift.link }}">Link</a></li>
+          {% endif %} {% endfor %}
+        </ul>
+      </section>
+
+      <section>
+        <h2>Others' Gift Lists</h2>
+        {% for user, gifts in gift_lists.items() %} {% if user != username %}
+        <h3>{{ user }}'s List</h3>
+        <ul>
+          {% for gift in gifts %}
+          <li>
+            {{ gift.title }} - <a href="{{ gift.link }}">Link</a> {% if not
+            gift.purchased %} -
+            <a href="/purchase/{{ user }}/{{ loop.index0 }}"
+              >Mark as Purchased</a
+            >
+            {% else %} - Purchased {% endif %}
+          </li>
+          {% endfor %}
+        </ul>
+        {% endif %} {% endfor %}
+      </section>
+    </main>
+
     <footer>
       <p>Happy Gifting! &copy; 2023</p>
     </footer>

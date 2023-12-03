@@ -97,7 +97,7 @@ h2 {
 /* Zoomed-in styles for smaller screens */
 @media screen and (max-width: 1000px) {
   body {
-    font-size: 1.4em; /* Increase font size */
+    font-size: 1.8em; /* Increase font size */
   }
   header h1 {
     font-size: 2em; /* Larger header font */
@@ -120,4 +120,52 @@ h2 {
     width: calc(100% - 20px);
     /* Adjust width for smaller screens */
   }
+}
+.gift-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.gift-card {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.gift-card:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.gift-card h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.gift-card a {
+  color: #06c;
+}
+
+.gift-card a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+.purchased {
+  color: green;
+  font-weight: bold;
+}
+
+.remove-button {
+  color: red !important;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.remove-button:hover {
+  color: darkred !important;
 }

@@ -17,8 +17,8 @@
           <label for="title">Title:</label>
           <input type="text" id="title" name="title" required /><br />
 
-          <label for="link">Link:</label>
-          <input type="text" id="link" name="link" required /><br />
+          <label for="link">Link (optional):</label>
+          <input type="text" id="link" name="link" /><br />
 
           <label for="list_owner">Add to List of:</label>
           <select id="list_owner" name="list_owner">
@@ -27,37 +27,76 @@
             {% endfor %}</select
           ><br />
 
+          <label for="comment">Comment (optional):</label>
+          <input type="text" id="comment" name="comment" /><br />
+
           <input type="submit" value="Add Gift" />
         </form>
       </section>
 
       <section>
         <h2>What I added to my own Gift List ({{ username }})</h2>
-        <!-- Displaying the User's Current Gift List -->
-        <ul>
+        <div class="gift-list">
           {% for gift in gift_lists[username] %} {% if gift.added_by == username
           %}
-          <li>{{ gift.title }} - <a href="{{ gift.link }}">Link</a></li>
+          <div class="gift-card">
+            <h3>{{ gift.title }}</h3>
+            {% if gift.link %}
+            <p><a href="{{ gift.link }}">View Link</a></p>
+            {% endif %} {% if gift.comment %}
+            <p>Comment: {{ gift.comment }}</p>
+            {% endif %}
+            <!-- Remove button inside the loop and gift-card div -->
+            <p>
+              <a
+                href="/remove/{{ username }}/{{ loop.index0 }}"
+                class="remove-button"
+                >Remove</a
+              >
+            </p>
+          </div>
           {% endif %} {% endfor %}
-        </ul>
+        </div>
       </section>
 
       <section>
         <h2>Others' Gift Lists</h2>
         {% for user, gifts in gift_lists.items() %} {% if user != username %}
         <h3>{{ user }}'s List</h3>
-        <ul>
+        <div class="gift-list">
           {% for gift in gifts %}
-          <li>
-            {{ gift.title }} - <a href="{{ gift.link }}">Link</a> {% if not
-            gift.purchased %} -
-            <a href="/purchase/{{ user }}/{{ loop.index0 }}"
-              >Mark as Purchased</a
-            >
-            {% else %} - <span style="color: darkgreen;">Purchased</span> {% endif %}
-          </li>
+          <div class="gift-card">
+            <h3>{{ gift.title }}</h3>
+            {% if gift.link %}
+            <p><a href="{{ gift.link }}">View Link</a></p>
+            {% endif %} {% if gift.comment %}
+            <p>Comment: {{ gift.comment }}</p>
+            {% endif %} {% if not gift.purchased %}
+            <p>
+              <a href="/purchase/{{ user }}/{{ loop.index0 }}"
+                >Mark as Purchased</a
+              >
+            </p>
+            {% else %}
+            <p>
+              <a
+                href="/unpurchase/{{ user }}/{{ loop.index0 }}"
+                style="color: darkgreen"
+                >Purchased</a
+              >
+            </p>
+            {% endif %}
+            <!-- Remove button inside the loop and gift-card div -->
+            <p>
+              <a
+                href="/remove/{{ user }}/{{ loop.index0 }}"
+                class="remove-button"
+                >Remove</a
+              >
+            </p>
+          </div>
           {% endfor %}
-        </ul>
+        </div>
         {% endif %} {% endfor %}
       </section>
     </main>

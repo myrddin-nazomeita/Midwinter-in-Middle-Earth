@@ -1,44 +1,27 @@
 {
     "Titou": [
         {
-            "title": "Book",
-            "link": "http://example.com",
-            "purchased": false,
-            "added_by": "Oriane"
-        },
-        {
-            "title": "Titou",
-            "link": "WDWDWD",
-            "purchased": false,
-            "added_by": "Titou"
-        },
-        {
-            "title": "qwdwqd",
-            "link": "https://plutus.it/",
+            "title": "Un peu de p\u00e2t\u00e9e",
+            "link": "",
+            "comment": "Car elle mange que des croquettes tout le temps",
             "purchased": false,
             "added_by": "Daniel"
         }
     ],
-    "Oriane": [
+    "Oriane": [],
+    "Daniel": [],
+    "Ga\u00eblle ": [],
+    "Emmanuelle": [],
+    "Daphn\u00e9": [],
+    "Marie": [],
+    "Pierre": [
         {
-            "title": "Headphones",
-            "link": "http://example.com",
+            "title": "Nouveau t\u00e9l\u00e9phone",
+            "link": "",
+            "comment": "",
             "purchased": true,
             "added_by": "Daniel"
         }
     ],
-    "Daniel": [
-        {
-            "title": "asd",
-            "link": "asd",
-            "purchased": true,
-            "added_by": "Titou"
-        },
-        {
-            "title": "asdasd",
-            "link": "asd",
-            "purchased": false,
-            "added_by": "Daniel"
-        }
-    ]
+    "Florence": []
 }

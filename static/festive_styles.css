@@ -12,7 +12,7 @@ body {
 }
 nav {
   text-align: center;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
 }
 a {
   color: #388e3c;
@@ -84,11 +84,6 @@ header {
   left: 50%;
   transform: translateX(-50%);
 }
-.logout-button {
-  position: absolute;
-  top: 0;
-  right: 10px;
-}
 /* Centering all <h2> elements */
 h2 {
   text-align: center;
@@ -101,10 +96,6 @@ h2 {
   }
   header h1 {
     font-size: 2em; /* Larger header font */
-  }
-  .logout-button a {
-    font-size: 1.2em; /* Larger font size for logout button */
-    padding: 10px 20px; /* Increased padding for better touch targets */
   }
   section {
     width: auto;
@@ -168,4 +159,33 @@ h2 {
 
 .remove-button:hover {
   color: darkred !important;
+}
+
+/* Style for the footer */
+footer {
+  position: fixed; /* Fixed position */
+  right: 0; /* Align to the right */
+  bottom: 0; /* Align to the bottom */
+  margin: 10px; /* Add some space from the edges of the page */
+  z-index: 100; /* Ensure the footer stays on top of other content */
+}
+
+/* Style for the logout button */
+.logout-button {
+  background-color: #f9f9f9; /* Light grey background */
+  border: 1px solid #ddd; /* Grey border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px 20px; /* Padding inside the button */
+}
+
+/* Style for the link inside the logout button to make it look like a button */
+.logout-button nav a {
+  text-decoration: none; /* Remove underline from links */
+  color: #333; /* Dark grey text */
+  font-weight: bold; /* Make the font bold */
+}
+
+/* Hover effect for the link */
+.logout-button nav a:hover {
+  color: #000; /* Darker text on hover for better visibility */
 }

@@ -1,74 +1,44 @@
 {
-    "user1": [
+    "Titou": [
         {
             "title": "Book",
             "link": "http://example.com",
             "purchased": false,
-            "added_by": "user2"
+            "added_by": "Oriane"
         },
         {
-            "title": "user1",
+            "title": "Titou",
             "link": "WDWDWD",
             "purchased": false,
-            "added_by": "user1"
+            "added_by": "Titou"
         },
         {
-            "title": "what user3 added to user1",
-            "link": "dwdwdw",
-            "purchased": true,
-            "added_by": "user3"
-        },
-        {
-            "title": "user1",
-            "link": "wdwddw",
+            "title": "qwdwqd",
+            "link": "https://plutus.it/",
             "purchased": false,
-            "added_by": "user2"
-        },
-        {
-            "title": " dsadsa",
-            "link": "asd",
-            "purchased": false,
-            "added_by": "user1"
+            "added_by": "Daniel"
         }
     ],
-    "user2": [
+    "Oriane": [
         {
             "title": "Headphones",
             "link": "http://example.com",
             "purchased": true,
-            "added_by": "user3"
-        },
-        {
-            "title": "WDWD",
-            "link": "WDWD",
-            "purchased": true,
-            "added_by": "user1"
-        },
-        {
-            "title": "wdwd",
-            "link": "wdwd",
-            "purchased": true,
-            "added_by": "user1"
-        },
-        {
-            "title": "wdwddw",
-            "link": "dwdw",
-            "purchased": false,
-            "added_by": "user2"
-        },
-        {
-            "title": "sad",
-            "link": "asdsd",
-            "purchased": false,
-            "added_by": "user2"
+            "added_by": "Daniel"
         }
     ],
-    "user3": [
+    "Daniel": [
         {
             "title": "asd",
             "link": "asd",
             "purchased": true,
-            "added_by": "user1"
+            "added_by": "Titou"
+        },
+        {
+            "title": "asdasd",
+            "link": "asd",
+            "purchased": false,
+            "added_by": "Daniel"
         }
     ]
 }

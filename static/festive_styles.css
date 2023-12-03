@@ -1,144 +1,123 @@
 /* Including Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans&display=swap');
-
 body {
-    font-family: 'Open Sans', sans-serif;
-    background-color: #f8f8f8;
-    background-image: url('festive-pattern.png');
-    /* Add a subtle festive background pattern */
-    color: #333;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #f8f8f8;
+  background-image: url('festive-pattern.png');
+  /* Add a subtle festive background pattern */
+  color: #333;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-header {
-    background-color: rgba(255, 255, 255, 0.825);
-    /* Festive red background */
-    padding: 10px;
-    text-align: center;
-}
-
-footer {
-    padding: 10px;
-    margin-right: -50px;
-    text-align: right;
-}
-
 nav {
-    text-align: center;
-    margin-bottom: 20px;
+  text-align: center;
+  margin-bottom: 20px;
 }
-
-nav a {
-    color: #ffffff;
-    background-color: #388e3c;
-    /* Festive green */
-    padding: 8px 15px;
-    border-radius: 4px;
-    text-decoration: none;
-    display: inline-block;
-    transition: background-color 0.3s ease;
+a {
+  color: #388e3c;
+  /* Festive green */
+  padding: 4px 4px;
+  border-radius: 4px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
 }
-
 nav a:hover {
-    background-color: #2e7031;
+  background-color: #2e7031;
 }
-
 h1,
 h2,
 h3 {
-    font-family: 'Playfair Display', serif;
+  font-family: 'Playfair Display', serif;
 }
-
 section {
-    background-color: #ffffff;
-    border: 2px solid #ddd;
-    padding: 20px;
-    border-radius: 8px;
-    max-width: 600px;
-    margin: 20px auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    /* Adding subtle shadow */
+  background-color: #ffffff;
+  border: 2px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 600px;
+  margin: 20px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Adding subtle shadow */
 }
-
 form {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }
-
 label {
-    margin-top: 10px;
+  margin-top: 10px;
 }
-
 input[type="text"],
 input[type="password"],
 select {
-    width: calc(100% - 22px);
-    /* Adjust for padding and border */
-    padding: 10px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+  width: calc(100% - 22px);
+  /* Adjust for padding and border */
+  padding: 10px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
-
 input[type="submit"] {
-    background-color: #388e3c;
-    /* Festive green */
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  background-color: #388e3c;
+  /* Festive green */
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
-
 input[type="submit"]:hover {
-    background-color: #2e7031;
+  background-color: #2e7031;
 }
-
+header {
+  position: relative; /* Set the header's position to relative */
+  text-align: center;
+}
+.header-content {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.logout-button {
+  position: absolute;
+  top: 0;
+  right: 10px;
+}
+/* Centering all <h2> elements */
+h2 {
+  text-align: center;
+}
 /* Responsive design adjustments */
-@media screen and (max-width: 768px) {
-    section {
-        width: auto;
-        padding: 15px;
-    }
-
-    form {
-        padding: 15px;
-    }
-
-    input[type="text"],
-    input[type="password"],
-    select,
-    input[type="submit"] {
-        width: calc(100% - 20px);
-        /* Adjust width for smaller screens */
-    }
-}
-
-@media screen and (max-width: 480px) {
-    body {
-        padding: 5px;
-    }
-
-    header,
-    footer {
-        font-size: 1.2em;
-        /* Smaller font size for headers and footers */
-    }
-
-    section {
-        border-width: 1px;
-    }
-}
-
-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+/* Zoomed-in styles for smaller screens */
+@media screen and (max-width: 1000px) {
+  body {
+    font-size: 1.4em; /* Increase font size */
+  }
+  header h1 {
+    font-size: 2em; /* Larger header font */
+  }
+  .logout-button a {
+    font-size: 1.2em; /* Larger font size for logout button */
+    padding: 10px 20px; /* Increased padding for better touch targets */
+  }
+  section {
+    width: auto;
+    padding: 80px;
+  }
+  form {
+    padding: 20px;
+  }
+  input[type="text"],
+  input[type="password"],
+  select,
+  input[type="submit"] {
+    width: calc(100% - 20px);
+    /* Adjust width for smaller screens */
+  }
 }

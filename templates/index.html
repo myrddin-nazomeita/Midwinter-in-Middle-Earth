@@ -9,14 +9,6 @@
     />
   </head>
   <body>
-    <header>
-      <h1>Welcome, {{ username }}</h1>
-    </header>
-
-    <nav>
-      <a href="/logout">Logout</a>
-    </nav>
-
     <main>
       <section>
         <h2>Add a Gift to Someone's List</h2>
@@ -40,7 +32,7 @@
       </section>
 
       <section>
-        <h2>What I added to my Gift List</h2>
+        <h2>What I added to my own Gift List ({{ username }})</h2>
         <!-- Displaying the User's Current Gift List -->
         <ul>
           {% for gift in gift_lists[username] %} {% if gift.added_by == username
@@ -62,16 +54,12 @@
             <a href="/purchase/{{ user }}/{{ loop.index0 }}"
               >Mark as Purchased</a
             >
-            {% else %} - Purchased {% endif %}
+            {% else %} - <span style="color: darkgreen;">Purchased</span> {% endif %}
           </li>
           {% endfor %}
         </ul>
         {% endif %} {% endfor %}
       </section>
     </main>
-
-    <footer>
-      <p>Happy Gifting! &copy; 2023</p>
-    </footer>
   </body>
 </html>

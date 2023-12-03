@@ -2,25 +2,67 @@
 <html>
   <head>
     <title>Midwinter in Middle-Earth</title>
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="{{ url_for('static', filename='festive_styles.css') }}"
-    />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='festive_styles.css') }}" />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: Arial, sans-serif;
+      }
+      .login-form {
+        max-width: 300px;
+        width: 80%;
+        margin: 0 auto;
+        padding: 20px;
+        box-sizing: border-box;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        background-color: #f9f9f9;
+      }
+      .login-form input[type="text"],
+      .login-form input[type="password"] {
+        width: 100%;
+        padding: 12px; /* Increased padding for larger touch targets */
+        margin-bottom: 15px; /* Larger margin for better spacing */
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 16px; /* Larger font size for better readability */
+      }
+      .login-form input[type="submit"] {
+        width: 100%;
+        padding: 15px; /* Larger padding for a bigger button */
+        border: none;
+        border-radius: 5px;
+        background-color: #4CAF50;
+        color: white;
+        font-size: 18px; /* Larger font size for the button */
+        cursor: pointer;
+      }
+      .login-form input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+
+      /* Responsive design for phones */
+      @media (max-width: 1000px) {
+        .login-form {
+          max-width: 70%; /* Allows the form to be larger on phone screens */
+          margin: 20px; /* Increased margin for better spacing */
+          padding: 25px; /* More padding for a larger form area */
+        }
+      }
+    </style>
   </head>
   <body>
-    <header>
-      <h2>Log In to Join the Festivities</h2>
-    </header>
-
-    <form action="/login" method="post">
-      Username: <input type="text" name="username" /><br />
-      Password: <input type="password" name="password" /><br />
-      <input type="submit" value="Login" />
-    </form>
-
-    <footer>
-      <p>Join the Gift Exchange Experience &copy; 2023</p>
-    </footer>
+    <div class="login-form">
+      <form action="/login" method="post">
+        <input type="text" name="username" placeholder="Username"><br>
+        <input type="password" name="password" placeholder="Password"><br>
+        <input type="submit" value="Login">
+      </form>
+    </div>
   </body>
 </html>
